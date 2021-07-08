@@ -15,12 +15,12 @@ public class Order {
     @Column(name = "ORDER_ID")
     private Long id;
 
-    @ManyToOne
-    @JoinColumn("MEMBER_ID")
-    private Member member;
+//    @ManyToOne
+//    @JoinColumn("MEMBER_ID")
+//    private Member member;
 
-    @OneToMany(mappedBy = "order")
-    private List<OrderItem> orderItems = new ArrayList<>();
+//    @OneToMany(mappedBy = "order")
+//    private List<OrderItem> orderItems = new ArrayList<>();
 
     private LocalDateTime orderDate;
 
@@ -35,13 +35,13 @@ public class Order {
         this.id = id;
     }
 
-    public Member getMember() {
-        return member;
-    }
-
-    public void setMember(Member member) {
-        this.member = member;
-    }
+//    public Member getMember() {
+//        return member;
+//    }
+//
+//    public void setMember(Member member) {
+//        this.member = member;
+//    }
 
     public LocalDateTime getOrderDate() {
         return orderDate;
