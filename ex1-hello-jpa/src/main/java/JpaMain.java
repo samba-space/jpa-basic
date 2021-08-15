@@ -1,4 +1,6 @@
+import hellojpa.Child;
 import hellojpa.Member;
+import hellojpa.Parent;
 import hellojpa.Team;
 
 import javax.persistence.EntityManager;
@@ -19,21 +21,16 @@ public class JpaMain {
         try {
 
 
-            Member member = new Member();
-            member.setUsername("hello");
-            System.out.println("member = " + member.getId());
-            if(Member.class == member.getClass()){
+            Child child1 = new Child();
+            Child child2 = new Child();
 
-            }
-            em.persist(member);
+            Parent parent = new Parent();
 
-            em.flush();
-            em.clear();
+            parent.addChild(child1);
+            parent.addChild(child2);
 
-            System.out.println("========");
-            System.out.println("member = " + member.getId());
-            Member findMember = em.find(Member.class, member.getId());
-            System.out.println("findMember = " + member.getUsername());
+            em.persist(parent);
+
 
             tx.commit();
 

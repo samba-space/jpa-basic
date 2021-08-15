@@ -15,7 +15,7 @@ public class Member {
     private String username;
 
     @OneToOne
-    @JoinColumn(name = "LOCKER_ID"))
+    @JoinColumn(name = "LOCKER_ID")
     private Locker locker;
 
     @ManyToMany
