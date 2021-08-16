@@ -1,7 +1,4 @@
-import hellojpa.Child;
-import hellojpa.Member;
-import hellojpa.Parent;
-import hellojpa.Team;
+import hellojpa.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -19,18 +16,11 @@ public class JpaMain {
         tx.begin();
 
         try {
+            Member member = new Member();
+            member.setUsername("userA");
+            member.setHomeAddress(new Address("city", "street","zipcode"));
 
-
-            Child child1 = new Child();
-            Child child2 = new Child();
-
-            Parent parent = new Parent();
-
-            parent.addChild(child1);
-            parent.addChild(child2);
-
-            em.persist(parent);
-
+            em.persist(member);
 
             tx.commit();
 
